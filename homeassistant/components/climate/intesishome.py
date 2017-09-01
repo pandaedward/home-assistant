@@ -274,7 +274,7 @@ class IntesisAC(ClimateDevice):
     def update_callback(self):
         """Called when data is received by pyIntesishome."""
         _LOGGER.debug("IntesisHome sent a status update.")
-        self.hass.async_add_job(self.update_ha_state, True)
+        self.hass.async_add_job(self.schedule_update_ha_state, True)
 
     @property
     def min_temp(self):
